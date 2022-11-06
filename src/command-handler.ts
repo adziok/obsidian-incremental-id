@@ -31,11 +31,15 @@ export class CommandHandler {
     }
   }
 
-  remove(template: IdDefinition | null): void {
-    if (template) {
+  remove(idDefinition: IdDefinition | null): void {
+    if (idDefinition) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      app.commands.removeCommand(`${this.plugin.manifest.id}:insert-id:${newIdDefinition.prefix}`);
+      app.commands.removeCommand(this.getCommandId(idDefinition.prefix));
     }
+  }
+
+  getCommandId(prefix: string) {
+    return `${this.plugin.manifest.id}:insert-id:${prefix}`;
   }
 }

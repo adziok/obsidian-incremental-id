@@ -11,6 +11,16 @@ export class IncrementalIdPlugin extends Plugin {
     await this.loadConfiguration();
 
     this.addSettingTab(new IncrementalIdPluginSettingTab(this, this.configuration));
+
+    // TODO find less hacky way
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    app.insertIncrementalId = async (prefix: string) => {
+      const idDef = await this.configuration.getIncrementId(prefix);
+      if (idDef) {
+        return `${idDef.prefix}-${idDef.currentIteration}`;
+      }
+    };
   }
 
   onunload() {
