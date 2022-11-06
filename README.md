@@ -11,7 +11,7 @@ This sample plugin demonstrates some of the basic functionality the plugin API c
 - Changes the default font color to red using `styles.css`.
 - Adds a ribbon icon, which shows a Notice when clicked.
 - Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
+- Adds a plugin setting tab to the configuration page.
 - Registers a global click event and output 'click' to the console.
 - Registers a global interval which logs 'setInterval' to the console.
 
@@ -26,7 +26,7 @@ Quick starting guide for new plugin devs:
 - Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
 - Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
 - Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
+- Enable plugin in configuration window.
 - For updates to the Obsidian API run `npm update` in the command line under your repo folder.
 
 ## Releasing new releases
