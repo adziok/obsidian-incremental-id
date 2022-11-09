@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-incremental-id",
-	"version": "0.0.3",
+	"version": "0.1.0-alpha.0",
 	"description": "Allow to generate Jira like ids.",
 	"main": "main.js",
 	"scripts": {
