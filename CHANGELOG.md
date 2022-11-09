@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/adziok/obsidian-incremental-id/compare/0.0.2...0.0.3) (2022-11-09)
+
+
+### Features
+
+* disable possibility to change an iteration number after ID creation ([65c26be](https://github.com/adziok/obsidian-incremental-id/commit/65c26bec5ad3472a64382b8b712be0f211ac5f4b))
+
 ### 0.0.2 (2022-11-06)
 
 
