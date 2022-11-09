@@ -109,24 +109,7 @@ export class IncrementalIdPluginSettingTab extends PluginSettingTab {
             });
         })
         .addText((cb) => cb.setDisabled(true).setValue(idDefinition.prefix))
-        .addText((cb) => {
-          cb.setPlaceholder('Provide current iteration for your ID')
-            .setValue(idDefinition.currentIteration.toString())
-            .onChange(async (newIdIteration: string) => {
-              const parsedIterationNumber = Number(newIdIteration);
-              if (!Number.isInteger(parsedIterationNumber) || parsedIterationNumber < 0) {
-                Logger.error(new Error('You need provide positive integer'));
-                return;
-              }
-              const updated: IdDefinition = {
-                ...this.config.configuration.idDefinitions[index],
-                currentIteration: parsedIterationNumber,
-              };
-              this.plugin.commandHandler.add(this.config.configuration.idDefinitions[index], updated);
-              this.config.configuration.idDefinitions[index] = updated;
-              await this.config.save();
-            });
-        })
+        .addText((cb) => cb.setDisabled(true).setValue(idDefinition.currentIteration.toString()))
         .addButton((cb) => {
           cb.setButtonText('Delete')
             .setCta()
@@ -135,27 +118,11 @@ export class IncrementalIdPluginSettingTab extends PluginSettingTab {
               await this.config.save();
               this.plugin.commandHandler.remove(this.config.configuration.idDefinitions[index]);
 
-              // Force refresh
               this.display();
             });
         });
       s.infoEl.remove();
     });
-
-    // new Setting(this.containerEl).addButton((cb) => {
-    //   cb.setButtonText('Add new ID definition')
-    //     .setCta()
-    //     .onClick(async () => {
-    //       this.config.configuration.idDefinitions.push({
-    //         currentIteration: 0,
-    //         name: '',
-    //         prefix: '',
-    //       });
-    //       await this.config.save();
-    //       // Force refresh
-    //       this.display();
-    //     });
-    // });
   }
 
   display() {
