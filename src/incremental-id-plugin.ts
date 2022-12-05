@@ -24,7 +24,10 @@ export class IncrementalIdPlugin extends Plugin {
   }
 
   onunload() {
-    return;
+    // TODO find less hacky way
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    app.insertIncrementalId = undefined;
   }
 
   private async loadConfiguration() {

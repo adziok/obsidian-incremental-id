@@ -18,7 +18,7 @@ export class CommandHandler {
 
     if (newIdDefinition) {
       this.plugin.addCommand({
-        id: `insert-id:${newIdDefinition.prefix}`,
+        id: newIdDefinition.prefix,
         name: `Insert ${newIdDefinition.name}`,
         editorCallback: async (editor: Editor) => {
           const idDef = await this.plugin.configuration.getIncrementId(newIdDefinition.prefix);
