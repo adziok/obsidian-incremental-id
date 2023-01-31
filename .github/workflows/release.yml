@@ -6,7 +6,7 @@ on:
       - "*"
 
 env:
-  PLUGIN_NAME: obsidian-incremental-id
+  PLUGIN_NAME: incremental-id
 
 jobs:
   build:
