@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/adziok/obsidian-incremental-id/compare/0.1.1...0.1.2) (2023-11-13)
+
+
+### Features
+
+* support non-uppercase only prefixes ([61ee39a](https://github.com/adziok/obsidian-incremental-id/commit/61ee39a4c133ab03077d10728883cacce7047eed))
+
 ### [0.1.1](https://github.com/adziok/obsidian-incremental-id/compare/0.1.0...0.1.1) (2023-01-31)
 
 ## [0.1.0](https://github.com/adziok/obsidian-incremental-id/compare/0.1.0-alpha.1...0.1.0) (2023-01-31)
