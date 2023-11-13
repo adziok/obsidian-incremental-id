@@ -1,4 +1,18 @@
-import { Workspace, Vault, MetadataCache, FileManager, UserEvent } from 'obsidian';
+import { Workspace, Vault, MetadataCache, FileManager, UserEvent, Notice as ONotice } from 'obsidian';
+
+export class Notice implements ONotice {
+  noticeEl: HTMLElement = {
+    innerHTML: '',
+  } as HTMLElement;
+
+  hide(): void {
+    return;
+  }
+
+  setMessage(): this {
+    return this;
+  }
+}
 
 export class App {
   /** @public */

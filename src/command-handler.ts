@@ -1,6 +1,6 @@
 import { Editor } from 'obsidian';
 import { IncrementalIdPlugin } from './incremental-id-plugin';
-import { IdDefinition } from './configuration/incremental-id-configuration';
+import { IdDefinition } from './types';
 
 export class CommandHandler {
   constructor(private plugin: IncrementalIdPlugin) {}

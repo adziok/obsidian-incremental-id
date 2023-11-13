@@ -1,7 +1,9 @@
 import { PluginSettingTab, Setting } from 'obsidian';
 import { Logger } from '../utils';
 import { IncrementalIdPlugin } from '../incremental-id-plugin';
-import { IdDefinition, IncrementalIdConfiguration } from '../configuration/incremental-id-configuration';
+import { IncrementalIdConfiguration } from '../configuration/incremental-id-configuration';
+import { isIdDefinitionValid } from './is-id-definition-valid';
+import { IdDefinition } from '../types';
 
 export class IncrementalIdPluginSettingTab extends PluginSettingTab {
   constructor(private plugin: IncrementalIdPlugin, private config: IncrementalIdConfiguration) {
@@ -9,27 +11,6 @@ export class IncrementalIdPluginSettingTab extends PluginSettingTab {
   }
 
   addAddIdDefinitionSection() {
-    const isIdDefinitionValid = (def: IdDefinition) => {
-      let invalid = false;
-      if (def.name.length < 3 || this.config.configuration.idDefinitions.find(({ name }) => name === def.name)) {
-        Logger.error(new Error('You need provide unique name with at least 3 characters'));
-        invalid = true;
-      }
-      if (
-        def.prefix.length < 2 ||
-        !/^[A-Z]*$/.test(def.prefix) ||
-        this.config.configuration.idDefinitions.find(({ prefix }) => prefix === def.prefix)
-      ) {
-        Logger.error(new Error('You need provide unique prefix from uppercase letters with at least 2 characters'));
-        invalid = true;
-      }
-      if (!Number.isInteger(def.currentIteration) || def.currentIteration < 0) {
-        Logger.error(new Error('You need provide positive integer or 0'));
-        invalid = true;
-      }
-      return !invalid;
-    };
-
     let tempIdDefinition: IdDefinition = {
       prefix: '',
       currentIteration: 0,
@@ -62,7 +43,7 @@ export class IncrementalIdPluginSettingTab extends PluginSettingTab {
         cb.setButtonText('Add new ID definition')
           .setCta()
           .onClick(async () => {
-            if (!isIdDefinitionValid(tempIdDefinition)) {
+            if (!isIdDefinitionValid(tempIdDefinition, this.config.configuration.idDefinitions)) {
               return;
             }
             this.config.configuration.idDefinitions.push(tempIdDefinition);
