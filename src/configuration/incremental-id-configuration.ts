@@ -1,15 +1,6 @@
 import { Logger } from '../utils';
 import { IncrementalIdPlugin } from '../incremental-id-plugin';
-
-export interface IdDefinition {
-  name: string;
-  currentIteration: number;
-  prefix: string;
-}
-
-export interface IncrementalIdPluginConfiguration {
-  idDefinitions: IdDefinition[];
-}
+import { IdDefinition, IncrementalIdPluginConfiguration } from '../types';
 
 const DEFAULT_CONFIGURATION: IncrementalIdPluginConfiguration = {
   idDefinitions: [
