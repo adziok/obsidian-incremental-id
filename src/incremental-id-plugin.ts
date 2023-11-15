@@ -21,6 +21,15 @@ export class IncrementalIdPlugin extends Plugin {
         return `${idDef.prefix}-${idDef.currentIteration}`;
       }
     };
+    // TODO find less hacky way
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    app.insertCurrentIncrementalId = async (prefix: string) => {
+      const idDef = await this.configuration.getCurrentId(prefix);
+      if (idDef) {
+        return `${idDef.prefix}-${idDef.currentIteration}`;
+      }
+    };
   }
 
   onunload() {

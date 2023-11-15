@@ -18,5 +18,11 @@ Example:
 <% await app.insertIncrementalId('DN') %>
 ```
 
+### Reuse the same ID in template
+If you want to reuse the same ID in the template you can use the following code:
+```javascript
+<% await app.insertCurrentIncrementalId('DN') %>
+```
+
 ## Why?
 I'm creating this plugin because I'm starting to use the kanban plugin and I want to have the option to reference a specific note in commits.

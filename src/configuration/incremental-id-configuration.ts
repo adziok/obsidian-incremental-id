@@ -35,6 +35,16 @@ export class IncrementalIdConfiguration {
     return this.configuration.idDefinitions[index];
   }
 
+  async getCurrentId(aPrefix: IdDefinition['prefix']) {
+    const index = this.configuration.idDefinitions.findIndex(({ prefix }) => prefix === aPrefix);
+    if (index < 0) {
+      Logger.error(new Error('Invalid ID prefix'));
+      return;
+    }
+
+    return this.configuration.idDefinitions[index];
+  }
+
   async save() {
     await this._save(this.configuration);
   }
