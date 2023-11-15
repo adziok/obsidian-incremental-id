@@ -1,7 +1,7 @@
 {
 	"id": "incremental-id",
 	"name": "Incremental ID",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"minAppVersion": "0.15.0",
 	"description": "Allow to generate Jira like ids.",
 	"author": "Adrian Karwowski",

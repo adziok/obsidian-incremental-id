@@ -1,6 +1,6 @@
 {
 	"name": "incremental-id",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "Allow to generate Jira like ids.",
 	"main": "main.js",
 	"scripts": {
