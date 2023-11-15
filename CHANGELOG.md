@@ -2,9 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.3.2](https://github.com/adziok/obsidian-incremental-id/compare/0.3.1...0.3.2) (2023-11-15)
+## [0.3.0](https://github.com/adziok/obsidian-incremental-id/compare/0.2.0...0.3.0) (2023-11-15)
 
-### [0.3.1](https://github.com/adziok/obsidian-incremental-id/compare/0.3.0...0.3.1) (2023-11-15)
+
+### Features
+
+* add option to reuse current incremental id ([705da20](https://github.com/adziok/obsidian-incremental-id/commit/705da204fc8b45b4b4bf08e5d2a3f73d1c629bc2))
 
 ### [0.2.1](https://github.com/adziok/obsidian-incremental-id/compare/0.3.0...0.2.1) (2023-11-15)
 
