@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/adziok/obsidian-incremental-id/compare/0.3.0...0.4.0) (2024-01-06)
+
+
+### Features
+
+* custom separators and leading zeros ([d9eae80](https://github.com/adziok/obsidian-incremental-id/commit/d9eae8094f969e137b9e96e656be3db09ec14f33))
+
 ## [0.3.0](https://github.com/adziok/obsidian-incremental-id/compare/0.2.0...0.3.0) (2023-11-15)
 
 
