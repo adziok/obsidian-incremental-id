@@ -2,6 +2,8 @@ import { Plugin } from 'obsidian';
 import { CommandHandler } from './command-handler';
 import { IncrementalIdPluginSettingTab } from './settings/incremental-id-plugin-setting-tab';
 import { IncrementalIdConfiguration } from './configuration/incremental-id-configuration';
+import { runMigrations } from './utils/run-migrations';
+import { generateIncrementalId } from './generate-incremental-id';
 
 export class IncrementalIdPlugin extends Plugin {
   configuration: IncrementalIdConfiguration;
@@ -9,6 +11,7 @@ export class IncrementalIdPlugin extends Plugin {
 
   async onload() {
     await this.loadConfiguration();
+    await runMigrations(this.configuration);
 
     this.addSettingTab(new IncrementalIdPluginSettingTab(this, this.configuration));
 
@@ -18,7 +21,7 @@ export class IncrementalIdPlugin extends Plugin {
     app.insertIncrementalId = async (prefix: string) => {
       const idDef = await this.configuration.getIncrementId(prefix);
       if (idDef) {
-        return `${idDef.prefix}-${idDef.currentIteration}`;
+        return generateIncrementalId(idDef);
       }
     };
     // TODO find less hacky way
@@ -27,7 +30,7 @@ export class IncrementalIdPlugin extends Plugin {
     app.insertCurrentIncrementalId = async (prefix: string) => {
       const idDef = await this.configuration.getCurrentId(prefix);
       if (idDef) {
-        return `${idDef.prefix}-${idDef.currentIteration}`;
+        return generateIncrementalId(idDef);
       }
     };
   }

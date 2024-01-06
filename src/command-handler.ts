@@ -1,6 +1,7 @@
 import { Editor } from 'obsidian';
 import { IncrementalIdPlugin } from './incremental-id-plugin';
 import { IdDefinition } from './types';
+import { generateIncrementalId } from './generate-incremental-id';
 
 export class CommandHandler {
   constructor(private plugin: IncrementalIdPlugin) {}
@@ -23,7 +24,7 @@ export class CommandHandler {
         editorCallback: async (editor: Editor) => {
           const idDef = await this.plugin.configuration.getIncrementId(newIdDefinition.prefix);
           if (idDef) {
-            const id = `${idDef.prefix}-${idDef.currentIteration}`;
+            const id = await generateIncrementalId(idDef);
             editor.replaceSelection(id);
           }
         },

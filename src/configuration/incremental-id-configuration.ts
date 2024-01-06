@@ -3,11 +3,17 @@ import { IncrementalIdPlugin } from '../incremental-id-plugin';
 import { IdDefinition, IncrementalIdPluginConfiguration } from '../types';
 
 const DEFAULT_CONFIGURATION: IncrementalIdPluginConfiguration = {
+  appliedMigrations: [],
   idDefinitions: [
     {
       name: 'Global ID',
       currentIteration: 0,
       prefix: 'GUID',
+      separator: '-',
+      leadingZeros: {
+        enabled: false,
+        numberOfZeros: 8,
+      },
     },
   ],
 };
