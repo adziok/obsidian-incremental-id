@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/adziok/obsidian-incremental-id/compare/0.4.2...0.5.0) (2026-08-29)
+
+
+### Bug Fixes
+
+* keep the iteration when it is longer than the number of zeros ([64f9c3f](https://github.com/adziok/obsidian-incremental-id/commit/64f9c3f3d2eecdc354b4e30194986705ad78fb24)), closes [#5](https://github.com/adziok/obsidian-incremental-id/issues/5)
+
 ### [0.4.2](https://github.com/adziok/obsidian-incremental-id/compare/0.4.1...0.4.2) (2024-01-06)
 
 ## [0.4.0](https://github.com/adziok/obsidian-incremental-id/compare/0.3.0...0.4.0) (2024-01-06)
