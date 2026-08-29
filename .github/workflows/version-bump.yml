@@ -2,7 +2,7 @@ name: Version Bump
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
 
 permissions:
   contents: write
