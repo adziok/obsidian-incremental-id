@@ -10,7 +10,7 @@ export class IncrementalIdPluginSettingTab extends PluginSettingTab {
     private plugin: IncrementalIdPlugin,
     private config: IncrementalIdConfiguration,
   ) {
-    super(app, plugin);
+    super(plugin.app, plugin);
   }
 
   addAddIdDefinitionSection() {

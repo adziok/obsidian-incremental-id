@@ -1,6 +1,12 @@
 import { Workspace, Vault, MetadataCache, FileManager, UserEvent, Notice as ONotice } from 'obsidian';
 
 export class Notice implements ONotice {
+  containerEl: HTMLElement = {
+    innerHTML: '',
+  } as HTMLElement;
+  messageEl: HTMLElement = {
+    innerHTML: '',
+  } as HTMLElement;
   noticeEl: HTMLElement = {
     innerHTML: '',
   } as HTMLElement;
